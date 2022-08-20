@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/paatre/product-preview-card-component-main)
-- Live Site URL: [GitHub Pages](https://paatre.github.io/product-preview-card-component-main)
+- Solution URL: [GitHub](https://github.com/paatre/nft-preview-card-component)
+- Live Site URL: [GitHub Pages](https://paatre.github.io/nft-preview-card-component)
 
 ## My process
 
