@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --main-background: hsl(217, 54%, 11%);
+  --card-background: hsl(216, 50%, 16%);
+  --separator: hsl(215, 32%, 27%);
+  --primary-blue: hsl(215, 51%, 70%);
+  --primary-cyan: hsl(178, 100%, 50%);
+  --primary-cyan-transparent: hsla(178, 100%, 50%, 0.5);
+  --white: hsl(0, 0%, 100%);
+  --body-copy-color: hsl(228, 12%, 48%);
+  --card-name-font-size: 20px;
+  --body-copy-font-size: 18px;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  body {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-background);
+
+    .card {
+      height: fit-content;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      padding: 25px;
+      border-radius: 16px;
+      background-color: var(--card-background);
+      font-family: 'Outfit', sans-serif;
+
+      &__image-container {
+        position: relative;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        cursor: pointer;
+
+        &::after {
+          content: url('../images/icon-view.svg');
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: calc((300px - 48px) / 2);
+          opacity: 0;
+          transition: opacity .5s ease;
+          background-color: var(--primary-cyan-transparent);
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+
+      &__image {
+        width: 100%;
+        vertical-align: middle;
+      }
+
+      &__name {
+        margin: 24px 0 16px;
+        color: var(--white);
+        font-size: var(--card-name-font-size);
+        font-weight: 600;
+
+        &:hover {
+          cursor: pointer;
+          color: var(--primary-cyan);
+        }
+      }
+
+      &__description {
+        margin-bottom: 16px;
+        color: var(--primary-blue);
+        font-size: var(--body-copy-font-size);
+        font-weight: 300;
+        line-height: 24px;
+      }
+
+      &__price-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &__price-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      &__price {
+        color: var(--primary-cyan);
+        font-weight: 600;
+      }
+
+      &__time-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      &__time-left {
+        color: var(--primary-blue);
+      }
+
+      &__separator {
+        height: 0.5px;
+        margin: 16px 0;
+        background-color: var(--separator);
+        border: none;
+      }
+
+      &__creator-container {
+        color: var(--primary-blue);
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+
+      &__avatar {
+        width: 32px;
+        height: 32px;
+        border: 1px solid white;
+        border-radius: 50%;
+      }
+
+      &__creator {
+        color: var(--white);
+
+        &:hover {
+          cursor: pointer;
+          color: var(--primary-cyan);
+        }
+      }
+    }
+  }
+}

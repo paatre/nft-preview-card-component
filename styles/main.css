@@ -1,1 +1,136 @@
-/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+:root {
+  --main-background: hsl(217, 54%, 11%);
+  --card-background: hsl(216, 50%, 16%);
+  --separator: hsl(215, 32%, 27%);
+  --primary-blue: hsl(215, 51%, 70%);
+  --primary-cyan: hsl(178, 100%, 50%);
+  --primary-cyan-transparent: hsla(178, 100%, 50%, 0.5);
+  --white: hsl(0, 0%, 100%);
+  --body-copy-color: hsl(228, 12%, 48%);
+  --card-name-font-size: 20px;
+  --body-copy-font-size: 18px;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+html body {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-background);
+}
+html body .card {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 16px;
+  background-color: var(--card-background);
+  font-family: "Outfit", sans-serif;
+}
+html body .card__image-container {
+  position: relative;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+html body .card__image-container::after {
+  content: url("../images/icon-view.svg");
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 126px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background-color: var(--primary-cyan-transparent);
+}
+html body .card__image-container:hover::after {
+  opacity: 1;
+}
+html body .card__image {
+  width: 100%;
+  vertical-align: middle;
+}
+html body .card__name {
+  margin: 24px 0 16px;
+  color: var(--white);
+  font-size: var(--card-name-font-size);
+  font-weight: 600;
+}
+html body .card__name:hover {
+  cursor: pointer;
+  color: var(--primary-cyan);
+}
+html body .card__description {
+  margin-bottom: 16px;
+  color: var(--primary-blue);
+  font-size: var(--body-copy-font-size);
+  font-weight: 300;
+  line-height: 24px;
+}
+html body .card__price-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+html body .card__price-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+html body .card__price {
+  color: var(--primary-cyan);
+  font-weight: 600;
+}
+html body .card__time-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+html body .card__time-left {
+  color: var(--primary-blue);
+}
+html body .card__separator {
+  height: 0.5px;
+  margin: 16px 0;
+  background-color: var(--separator);
+  border: none;
+}
+html body .card__creator-container {
+  color: var(--primary-blue);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+html body .card__avatar {
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+html body .card__creator {
+  color: var(--white);
+}
+html body .card__creator:hover {
+  cursor: pointer;
+  color: var(--primary-cyan);
+}/*# sourceMappingURL=main.css.map */
